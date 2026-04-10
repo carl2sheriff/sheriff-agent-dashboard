@@ -27,6 +27,31 @@ const AGENTS = {
     owner: 'Sheriff Projects',
     environmentVars: ['SLACK_BOT_TOKEN', 'SLACK_CHANNEL_ID', 'GOOGLE_DRIVE_FOLDER_ID', 'GOOGLE_SERVICE_ACCOUNT_KEY', 'OPENAI_API_KEY'],
   },
+  'sheriff-booking-bot': {
+    id: 'sheriff-booking-bot',
+    name: 'Sheriff Booking Bot',
+    url: 'https://sheriff-booking-bot-production.up.railway.app',
+    schedule: null,
+    scheduleHuman: 'Temps réel (event-driven)',
+    description: 'Bot Slack pour booker des retoucheurs photo à partir du planning Google Sheets',
+    integrations: ['Slack', 'Google Sheets'],
+    slackChannel: '#booking',
+    slackCommands: ['/booking'],
+    railwayServiceId: null,
+    owner: 'Sheriff Projects',
+    github: 'https://github.com/carl2sheriff/sheriff-booking-bot',
+    environmentVars: [
+      'SLACK_BOT_TOKEN',
+      'SLACK_APP_TOKEN',
+      'SLACK_SIGNING_SECRET',
+      'SLACK_BOOKING_CHANNEL',
+      'NORA_SLACK_USER_ID',
+      'GOOGLE_SERVICE_ACCOUNT_EMAIL',
+      'GOOGLE_PRIVATE_KEY',
+      'GOOGLE_SPREADSHEET_ID',
+      'GOOGLE_SHEET_NAME',
+    ],
+  },
 }
 
 module.exports = { AGENTS }
